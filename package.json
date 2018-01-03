@@ -1,0 +1,28 @@
+{
+  "name": "quick-ftp",
+  "version": "1.0.0",
+  "description": "A quick CLI based ftp server",
+  "main": "index.js",
+  "scripts": {
+    "test": "start",
+    "build": "babel src -d lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gcDee/quick-ftp.git"
+  },
+  "author": "gcd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gcDee/quick-ftp/issues"
+  },
+  "homepage": "https://github.com/gcDee/quick-ftp#readme",
+  "dependencies": {
+    "ftpd": "^0.2.15"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.14.0"
+  }
+}
