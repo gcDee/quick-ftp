@@ -2,10 +2,11 @@
   "name": "quick-ftp",
   "version": "1.0.0",
   "description": "A quick CLI based ftp server",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "start",
-    "build": "babel src -d lib"
+    "build": "babel src -d lib",
+    "start": "node lib/index.js"
   },
   "repository": {
     "type": "git",
