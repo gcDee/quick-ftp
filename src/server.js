@@ -1,23 +1,25 @@
-import express from 'express';
-import serveIndex from 'serve-index';
-
+import ftp from 'xftp';
+import fs from 'fs';
 
 const startServer = (config) => {
-	const app = express();
-
-	// Serve URLs like /ftp/thing as public/ftp/thing
-	// The express.static serves the file contents
-	// The serveIndex is this module serving the directory
-	app.use(
-		'/ftp',
-		express.static(config.path),
-		serveIndex(config.path, {'icons': true})
+	const { path, port } = config;
+	console.log(process.pwd);
+	console.log(process.cwd());
+	return ftp.createServer({
+		auth: () => {},
+		put: (filename, stream) => stream.pipe(fs.createWriteStream(filename)),
+		get: (filename) => fs.createReadStream(filename),
+		cwd: './'
+	})
+	.listen({
+		host: '0.0.0.0',
+		port: port
+	},err => err
+		? console.log(err.message)
+		: console.log(`Server listening on port ${port}`)
 	);
-
-	// Listen
-	return app.listen(config.port);
-}
+};
 
 export default {
 	start: startServer
-}
+};
