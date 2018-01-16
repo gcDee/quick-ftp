@@ -8,6 +8,6 @@ program
 
 const config = {
     port: program.port ? program.port : 1337,
-    path: program.path ? program.path : '~/'
+    path: program.path ? program.path : './'
 };
 const app = server.start(config);

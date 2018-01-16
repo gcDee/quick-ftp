@@ -21,6 +21,7 @@
   "dependencies": {
     "commander": "^2.12.2",
     "express": "^4.16.2",
+    "ftp-server": "^0.1.0",
     "serve-index": "^1.9.1",
     "xftp": "^1.0.2"
   },
